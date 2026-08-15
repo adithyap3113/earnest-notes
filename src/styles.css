@@ -650,10 +650,12 @@
   transition:
     transform 2.4s cubic-bezier(0.25, 0.8, 0.3, 1),
     box-shadow 2.4s ease;
-  background: color-mix(in oklab, oklch(0.93 0.05 50) 92%, transparent);
+  width: 15px;
+  height: 15px;
+  background: color-mix(in oklab, oklch(0.72 0.15 50), oklch(0.94 0.05 50) var(--n));
   box-shadow:
-    0 0 20px 7px color-mix(in oklab, oklch(0.86 0.07 45) 38%, transparent),
-    0 0 70px 26px color-mix(in oklab, oklch(0.8 0.08 40) 16%, transparent);
+    0 0 22px 8px color-mix(in oklab, oklch(0.7 0.14 45) 34%, transparent),
+    0 0 72px 28px color-mix(in oklab, oklch(0.7 0.14 40) 14%, transparent);
 }
 
 @utility orb-close-b {
@@ -662,19 +664,21 @@
   transition:
     transform 2.6s cubic-bezier(0.25, 0.8, 0.3, 1),
     opacity 1.6s ease;
-  background: color-mix(in oklab, oklch(0.93 0.05 22) 92%, transparent);
+  width: 15px;
+  height: 15px;
+  background: color-mix(in oklab, oklch(0.68 0.14 20), oklch(0.94 0.05 22) var(--n));
   box-shadow:
-    0 0 20px 7px color-mix(in oklab, oklch(0.86 0.07 25) 38%, transparent),
-    0 0 70px 26px color-mix(in oklab, oklch(0.8 0.08 20) 16%, transparent);
+    0 0 22px 8px color-mix(in oklab, oklch(0.68 0.13 22) 34%, transparent),
+    0 0 72px 28px color-mix(in oklab, oklch(0.68 0.13 20) 14%, transparent);
 }
 
 @utility is-joined {
   & .orb-close-a {
-    transform: translate(-50%, -50%) translateX(-0.85rem);
+    transform: translate(-50%, -50%) translateX(-1.1rem);
   }
   & .orb-close-b {
     opacity: 1;
-    transform: translate(-50%, -50%) translateX(0.85rem);
+    transform: translate(-50%, -50%) translateX(1.1rem);
   }
 }
 
