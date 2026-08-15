@@ -227,7 +227,6 @@ export function ReachScene() {
           style={{ opacity: (near * 0.9).toFixed(3) }}
         />
       </div>
-      <span className="scene-night-shift" data-night={(0.78 - 0.5).toFixed(2)} />
     </section>
   );
 }
