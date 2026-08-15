@@ -108,17 +108,17 @@ export function Ambience() {
 
   const particles = useMemo(
     () =>
-      Array.from({ length: 18 }, (_, i) => {
+      Array.from({ length: 24 }, (_, i) => {
         const seed = (i * 9301 + 49297) % 233280;
         const r = seed / 233280;
         const r2 = ((i * 4517 + 7919) % 1000) / 1000;
         return {
           left: `${(r * 100).toFixed(2)}%`,
           top: `${(r2 * 100).toFixed(2)}%`,
-          size: `${(2 + r2 * 3).toFixed(1)}px`,
-          duration: `${(16 + r * 20).toFixed(1)}s`,
-          delay: `-${(r2 * 24).toFixed(1)}s`,
-          drift: `${(r < 0.5 ? -1 : 1) * (10 + r2 * 26)}px`,
+          size: `${(2.5 + r2 * 3.5).toFixed(1)}px`,
+          duration: `${(18 + r * 22).toFixed(1)}s`,
+          delay: `-${(r2 * 28).toFixed(1)}s`,
+          drift: `${(r < 0.5 ? -1 : 1) * (10 + r2 * 28)}px`,
         };
       }),
     [],
@@ -127,7 +127,9 @@ export function Ambience() {
   return (
     <div className="ambience" aria-hidden="true">
       <div className="ambience-glow" />
+      <div className="ambience-core" />
       <div className="ambience-veil" />
+      <div className="ambience-vignette" />
       {!reduced && (
         <div className="ambience-particles">
           {particles.map((p, i) => (
