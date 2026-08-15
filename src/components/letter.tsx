@@ -83,15 +83,32 @@ export function Section({
   );
 }
 
-export function MessageCard({ text, index }: { text: string; index: number }) {
+export function MessageCard({
+  text,
+  index,
+  highlight = false,
+}: {
+  text: string;
+  index: number;
+  highlight?: boolean;
+}) {
   return (
-    <Reveal delay={index * 90}>
-      <article className="message-card">
-        <span className="message-index">{String(index + 1).padStart(2, "0")}</span>
-        <p className="message-text">
+    <Reveal delay={Math.min(index, 3) * 70} className="timeline-item">
+      <span className="timeline-dot" aria-hidden="true" />
+      <article className={highlight ? "message-card message-card-strong" : "message-card"}>
+        <p className={highlight ? "message-text-strong" : "message-text"}>
           <RichText text={text} />
         </p>
       </article>
     </Reveal>
   );
 }
+
+export function TimelineNote({ text }: { text: string }) {
+  return (
+    <Reveal className="timeline-note">
+      <span>{text}</span>
+    </Reveal>
+  );
+}
+

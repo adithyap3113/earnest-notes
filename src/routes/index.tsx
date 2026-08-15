@@ -8,12 +8,15 @@ import {
   highlightedMessages,
   highlightedTitle,
   introduction,
+  messagesIntro,
+  messagesOutro,
   meta,
   need,
   opening,
   understand,
 } from "@/content";
-import { MessageCard, Reveal, RichText, Section } from "@/components/letter";
+import { MessageCard, Reveal, RichText, Section, TimelineNote } from "@/components/letter";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,12 +90,34 @@ function Letter() {
 
       {/* SECTION 4 — MY IMPORTANT MESSAGES */}
       <Section title={highlightedTitle} className="messages">
-        <div className="mt-8 grid gap-5">
-          {highlightedMessages.map((message, i) => (
-            <MessageCard key={i} text={message} index={i} />
+        <Reveal>
+          <p className="messages-intro">
+            {messagesIntro.map((line, i) => (
+              <span key={i}>{line}</span>
+            ))}
+          </p>
+        </Reveal>
+        <div className="timeline">
+          {highlightedMessages.map((item, i) =>
+            item.type === "note" ? (
+              <TimelineNote key={i} text={item.text} />
+            ) : (
+              <MessageCard key={i} text={item.text} index={i} highlight={item.highlight ?? false} />
+            ),
+          )}
+        </div>
+        <div className="messages-outro">
+          {messagesOutro.lines.map((line, i) => (
+            <Reveal key={i} delay={i * 90}>
+              <p className="prose-line">{line}</p>
+            </Reveal>
           ))}
+          <Reveal delay={160}>
+            <p className="focus-line">{messagesOutro.focus}</p>
+          </Reveal>
         </div>
       </Section>
+
 
       <Divider />
 
