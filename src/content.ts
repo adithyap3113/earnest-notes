@@ -1,0 +1,99 @@
+/**
+ * ─────────────────────────────────────────────────────────────
+ *  EDIT EVERYTHING HERE.
+ *  This is the only file you need to touch to change the words.
+ *  Tip: wrap any phrase in *asterisks* to emphasise it,
+ *  e.g. "I just want us to *understand each other*."
+ * ─────────────────────────────────────────────────────────────
+ */
+
+export const opening = {
+  title: "I couldn't explain this properly through messages.",
+  subtitle: "So I made this for you instead.",
+  button: "Read this slowly →",
+};
+
+export const introduction = [
+  "There are some things I want to say, but whenever I try to text you, I don't know how to put everything into words.",
+  "So instead of sending you another confusing message, I wanted to explain everything here — properly, honestly, and without rushing.",
+];
+
+export const understand = {
+  title: "What I want you to understand",
+  lines: [
+    "I'm not trying to fight with you.",
+    "I'm not trying to blame you.",
+    "I'm not trying to make you feel guilty.",
+    "I just want you to understand what is going on in my mind and what I have been feeling.",
+  ],
+};
+
+/**
+ * YOUR OWN MESSAGES.
+ * Replace these strings with exactly what you want to say.
+ * They will be shown exactly as written (asterisks become emphasis).
+ */
+export const highlightedMessages: string[] = [
+  "MESSAGE 1",
+  "MESSAGE 2",
+  "MESSAGE 3",
+];
+
+export const highlightedTitle = "My important messages";
+
+export const feel = {
+  title: "What I feel",
+  lines: [
+    "Sometimes I feel like you're not really understanding what I'm trying to say.",
+    "When I say something, there is usually a reason behind it. Even when I don't explain myself properly, it doesn't mean I don't care.",
+    "Sometimes I become quiet because I don't know how to explain what I'm feeling. Sometimes I say things badly. Sometimes I overthink.",
+    "But behind all of that, there is one simple thing:",
+  ],
+  focus: "I don't want us to misunderstand each other.",
+};
+
+export const need = {
+  title: "What I need from you",
+  lines: [
+    "I don't need you to agree with everything I say.",
+    "I don't expect you to understand everything immediately.",
+    "I just want you to listen to me and try to understand what I actually mean before assuming what I meant.",
+    "And I promise I'll try to do the same for you.",
+  ],
+};
+
+export const about = {
+  title: "About us",
+  lines: [
+    "I care about you. That's exactly why these things affect me so much.",
+    "If I didn't care, I wouldn't be trying this hard to explain myself.",
+    "I don't want a relationship where we keep fighting because of misunderstandings.",
+    "I want us to be able to talk honestly, understand each other, and solve things together.",
+  ],
+};
+
+export const final = {
+  lines: [
+    "I'm not making this website because I want a perfect answer from you.",
+    "I'm making it because I couldn't say all of this properly through a chat.",
+    "Take your time.",
+    "Read everything.",
+    "And when you're ready, I just want you to tell me what you understood, what you felt, and what you want me to understand too.",
+    "I don't want to win an argument.",
+  ],
+  focus: "I want us to understand each other. ❤️",
+};
+
+export const ending = {
+  button: "I've read everything ❤️",
+  thanks: [
+    "Thank you for reading everything.",
+    "Whenever you're ready, talk to me. That's all I want.",
+  ],
+};
+
+export const meta = {
+  title: "Something I couldn't say in a message",
+  description:
+    "A quiet letter — some things I couldn't explain properly over text, written down slowly and honestly.",
+};
