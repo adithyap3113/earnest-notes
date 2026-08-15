@@ -16,6 +16,19 @@ import {
   understand,
 } from "@/content";
 import { MessageCard, Reveal, RichText, Section, TimelineNote } from "@/components/letter";
+import {
+  Ambience,
+  ClosingLight,
+  DistanceScene,
+  NightDriver,
+  ReachScene,
+  SilenceScene,
+} from "@/components/atmosphere";
+
+/** Invisible marker that tells the background how dark this point should be. */
+function Night({ v }: { v: number }) {
+  return <span className="night-marker" data-night={v} aria-hidden="true" />;
+}
 
 
 export const Route = createFileRoute("/")({
@@ -42,8 +55,12 @@ function Letter() {
 
   return (
     <main className="page">
+      <Ambience />
+      <NightDriver />
+
       {/* SECTION 1 — OPENING */}
       <section className="section opening">
+        <Night v={0} />
         <div className="mx-auto w-full max-w-[38rem] text-center">
           <Reveal>
             <h1 className="opening-title">{opening.title}</h1>
@@ -62,6 +79,7 @@ function Letter() {
 
       {/* SECTION 2 — INTRODUCTION */}
       <Section id="intro">
+        <Night v={0.14} />
         {introduction.map((line, i) => (
           <Reveal key={i} delay={i * 90}>
             <p className="prose-line">
@@ -75,6 +93,7 @@ function Letter() {
 
       {/* SECTION 3 — WHAT I WANT YOU TO UNDERSTAND */}
       <Section title={understand.title}>
+        <Night v={0.34} />
         <div className="mt-8 grid gap-3">
           {understand.lines.map((line, i) => (
             <Reveal key={i} delay={i * 80}>
@@ -86,7 +105,9 @@ function Letter() {
         </div>
       </Section>
 
-      <Divider />
+      {/* WORDLESS — distance, then silence */}
+      <DistanceScene />
+      <SilenceScene />
 
       {/* SECTION 4 — MY IMPORTANT MESSAGES */}
       <Section title={highlightedTitle} className="messages">
@@ -97,6 +118,7 @@ function Letter() {
             ))}
           </p>
         </Reveal>
+        <Night v={0.9} />
         <div className="timeline">
           {highlightedMessages.map((item, i) =>
             item.type === "note" ? (
@@ -106,6 +128,7 @@ function Letter() {
             ),
           )}
         </div>
+        <Night v={0.58} />
         <div className="messages-outro">
           {messagesOutro.lines.map((line, i) => (
             <Reveal key={i} delay={i * 90}>
@@ -123,6 +146,7 @@ function Letter() {
 
       {/* SECTION 5 — WHAT I FEEL */}
       <Section title={feel.title}>
+        <Night v={0.56} />
         {feel.lines.map((line, i) => (
           <Reveal key={i} delay={i * 70}>
             <p className="prose-line">
@@ -139,6 +163,7 @@ function Letter() {
 
       {/* SECTION 6 — WHAT I NEED FROM YOU */}
       <Section title={need.title}>
+        <Night v={0.62} />
         {need.lines.map((line, i) => (
           <Reveal key={i} delay={i * 70}>
             <p className="prose-line">
@@ -148,10 +173,12 @@ function Letter() {
         ))}
       </Section>
 
-      <Divider />
+      {/* WORDLESS — reaching toward her, warmth returning */}
+      <ReachScene />
 
       {/* SECTION 7 — ABOUT US */}
       <Section title={about.title}>
+        <Night v={0.3} />
         {about.lines.map((line, i) => (
           <Reveal key={i} delay={i * 70}>
             <p className="prose-line">
@@ -163,6 +190,7 @@ function Letter() {
 
       {/* SECTION 8 — FINAL MESSAGE */}
       <section className="section final">
+        <Night v={0.1} />
         <div className="mx-auto w-full max-w-[40rem] text-center">
           {final.lines.map((line, i) => (
             <Reveal key={i} delay={i * 60}>
@@ -179,7 +207,9 @@ function Letter() {
 
       {/* SECTION 9 — END */}
       <section className="section end">
+        <Night v={0.06} />
         <div className="mx-auto w-full max-w-[34rem] text-center">
+          <ClosingLight joined={read} />
           {!read ? (
             <Reveal>
               <button type="button" onClick={() => setRead(true)} className="btn-soft">
