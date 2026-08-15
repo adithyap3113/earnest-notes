@@ -16,6 +16,8 @@ export default defineConfig({
     },
   },
 
+  nitro: false,
+
   vite: {
     base: "/earnest-notes/",
   },
