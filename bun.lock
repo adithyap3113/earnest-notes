@@ -55,7 +55,6 @@
         "tailwindcss": "^4.2.1",
         "tw-animate-css": "^1.3.4",
         "vaul": "^1.1.2",
-        "vite-tsconfig-paths": "^6.0.2",
         "zod": "^3.24.2"
       },
       "devDependencies": {
@@ -79,5 +78,60 @@
       }
     }
   },
-  "packages": {}
+  "packages": {
+    "@babel/code-frame": [
+      "@babel/code-frame@7.24.7",
+      "",
+      {
+        "dependencies": {
+          "@babel/highlight": "^7.24.7"
+        }
+      },
+      "sha512-+Ad1rfsUSTI9/palette-utxkuDhGj5zzqvhby/6kr/noqc2yE1hRTgvaXpm9va/f01hchj8s8R0rHvUB77G7P3w=="
+    ],
+    "@babel/generator": [
+      "@babel/generator@7.24.10",
+      "",
+      {
+        "dependencies": {
+          "@babel/types": "^7.24.10",
+          "@jridgewell/gen-mapping": "^0.3.5",
+          "@jridgewell/trace-mapping": "^0.3.25",
+          "jsesc": "^2.5.1"
+        }
+      },
+      "sha512-o9WLAN5g51eSMxZ0M91YH5K2W9Y/1ZPq8Mvm+4VU6hfI5p9e5b/C7NlP3E0nNE9i4e6e3uBcP+vQKlCNGVzIg=="
+    ],
+    "@babel/helper-environment-visitor": [
+      "@babel/helper-environment-visitor@7.24.7",
+      "",
+      {
+        "dependencies": {
+          "@babel/types": "^7.24.7"
+        }
+      },
+      "sha512-DoiN84+4Gnd0ncbBom3RYo9EJw2b3tnf/98GEP7Rz3+wN/KY+7ji6EsrXI246XQXZfTEQXMuOWHwPiUVmgyRA=="
+    ],
+    "@babel/helper-function-name": [
+      "@babel/helper-function-name@7.24.7",
+      "",
+      {
+        "dependencies": {
+          "@babel/template": "^7.24.7",
+          "@babel/types": "^7.24.7"
+        }
+      },
+      "sha512-FyoJTsj/PEUWu1/TYRiXTIHc8lbg+WPVksW9MwQkDvW5MnRSchSzay6mTj6tdcrkalLT50ervVFRcTDCovJSg=="
+    ],
+    "@babel/helper-hoist-variables": [
+      "@babel/helper-hoist-variables@7.24.7",
+      "",
+      {
+        "dependencies": {
+          "@babel/types": "^7.24.7"
+        }
+      },
+      "sha512-a/0DLsreJ2jY0WhyQ4YN3+wpxIoLrIEo7BJKK+3eoA60IHd/6gLGd7M5s0oPD8minS8P8 == "
+    ]
+  }
 }
