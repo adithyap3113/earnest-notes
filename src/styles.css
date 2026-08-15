@@ -41,7 +41,7 @@
   --night: 0;
   --n: calc(var(--night) * 100%);
 
-  --background: color-mix(in oklab, oklch(0.982 0.011 78), oklch(0.185 0.018 40) var(--n));
+  --background: color-mix(in oklab, oklch(0.982 0.011 78), oklch(0.145 0.016 40) var(--n));
   --foreground: color-mix(in oklab, oklch(0.284 0.021 40), oklch(0.93 0.014 70) var(--n));
   --card: color-mix(in oklab, oklch(0.995 0.006 80), oklch(0.245 0.022 40) var(--n));
   --card-foreground: var(--foreground);
@@ -300,10 +300,11 @@
 @utility message-text {
   font-size: clamp(1rem, 4.1vw, 1.1rem);
   line-height: 1.75;
+  letter-spacing: 0.002em;
   white-space: pre-line;
   overflow-wrap: anywhere;
   text-wrap: pretty;
-  color: color-mix(in oklab, var(--foreground) 92%, transparent);
+  color: var(--foreground);
 }
 
 @utility message-text-strong {
@@ -314,7 +315,7 @@
   white-space: pre-line;
   overflow-wrap: anywhere;
   text-wrap: pretty;
-  color: color-mix(in oklab, var(--primary) 88%, var(--foreground));
+  color: color-mix(in oklab, var(--primary) 42%, var(--foreground));
 }
 
 
@@ -466,7 +467,7 @@
 @utility ambience-glow {
   position: absolute;
   inset: 0;
-  opacity: calc(1 - var(--night) * 0.82);
+  opacity: calc((1 - var(--night)) * (1 - var(--night)));
   background-image:
     radial-gradient(
       70% 42% at 50% 8%,
