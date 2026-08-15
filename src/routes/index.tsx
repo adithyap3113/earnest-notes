@@ -102,7 +102,7 @@ function Letter() {
             item.type === "note" ? (
               <TimelineNote key={i} text={item.text} />
             ) : (
-              <MessageCard key={i} text={item.text} index={i} highlight={item.highlight} />
+              <MessageCard key={i} text={item.text} index={i} highlight={item.highlight ?? false} />
             ),
           )}
         </div>
