@@ -29,17 +29,72 @@ export const understand = {
 };
 
 /**
- * YOUR OWN MESSAGES.
- * Replace these strings with exactly what you want to say.
- * They will be shown exactly as written (asterisks become emphasis).
+ * YOUR OWN MESSAGES — shown exactly as written, nothing rewritten.
+ * `highlight: true` makes a message a larger, glowing card.
+ * A `note` entry is a quiet transition line between parts.
  */
-export const highlightedMessages: string[] = [
-  "MESSAGE 1",
-  "MESSAGE 2",
-  "MESSAGE 3",
-];
+export type MessageItem =
+  | { type: "message"; text: string; highlight?: boolean }
+  | { type: "note"; text: string };
 
 export const highlightedTitle = "My important messages";
+
+export const messagesIntro = [
+  "These aren't words I wrote perfectly.",
+  "They're just the things I was trying to say.",
+];
+
+export const highlightedMessages: MessageItem[] = [
+  // PART 1
+  { type: "message", text: "Naa eathuku story vachan kuda unakku thearila lekha....." },
+  {
+    type: "message",
+    text: "Eadho soldraaaa laaaa..... intha day oru nalla story poda mudiyathu ahh nuu.....nee first ennaku msg panniyyaa lekha....",
+  },
+  { type: "message", text: "Atta illa naaa...nee thaa call pannuveaaa....." },
+  { type: "message", text: "Aana....ippa pana matraaa..." },
+  { type: "message", text: "Attha irukangala illayaa nu naanum ah thaaa keakanum pola....." },
+  { type: "message", text: "Nee thaa lekha maritaaaaa", highlight: true },
+  {
+    type: "message",
+    text: "Naa thaaa change panniteaa.....unna koraa sollitea irukan nu soldraa laaaa....",
+    highlight: true,
+  },
+  { type: "message", text: "Naa Enna Unna koraa sonneaa....", highlight: true },
+  {
+    type: "message",
+    text: "Munnadi nee....eathu ella panniyoooo....ippa athu ella pandrathu illaaaaa.......athu unta ketaaaa",
+  },
+  { type: "message", text: "Unna koraa soldran...." },
+
+  // TRANSITION
+  { type: "note", text: "Maybe I didn't explain it properly..." },
+
+  // PART 2
+  {
+    type: "message",
+    text: "Naa enna Ketan...... mrng laa irundhu oru msg kuda ilaa.... Avolo wrk ahh nu ketann.....ithu kuda keaka kudathu ahhh",
+  },
+  { type: "message", text: "Eadho soldraa... inikumm yen ippadi pandraa nuuuu.... enna pannea" },
+  {
+    type: "message",
+    text: "Call pannadrathu...nee thaaa pannanum.....naa epadi pannuves......",
+    highlight: true,
+  },
+  { type: "message", text: "Nee thaa sonna.... oorulaa ellarumea unna theriyum nuu" },
+  { type: "message", text: "Athu mattu illamaa... attha illayaa nu naa thaaa ketannn" },
+  {
+    type: "message",
+    text: "Neeyaa thaa call pannuven.... attha illa naa.....ippa thaa eadhoo pudhusu ahh pandraa",
+    highlight: true,
+  },
+];
+
+export const messagesOutro = {
+  lines: ["That's what I was trying to say.", "I just wanted you to understand me."],
+  focus: "Whenever you're ready, I want to understand you too. ❤️",
+};
+
 
 export const feel = {
   title: "What I feel",
