@@ -8,12 +8,15 @@ import {
   highlightedMessages,
   highlightedTitle,
   introduction,
+  messagesIntro,
+  messagesOutro,
   meta,
   need,
   opening,
   understand,
 } from "@/content";
-import { MessageCard, Reveal, RichText, Section } from "@/components/letter";
+import { MessageCard, Reveal, RichText, Section, TimelineNote } from "@/components/letter";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
