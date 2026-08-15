@@ -679,8 +679,12 @@
 
 /* message focus moments */
 
-@utility message-card-strong {
-  animation: none;
+.reveal.item-strong {
+  transform: translateY(20px) scale(0.98);
+  transition-duration: 1.5s;
+}
+.reveal.item-strong.is-visible {
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
