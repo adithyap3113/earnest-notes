@@ -694,3 +694,9 @@
     animation: none !important;
   }
 }
+
+.night-marker {
+  display: block;
+  height: 0;
+  width: 0;
+}
