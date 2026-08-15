@@ -93,7 +93,10 @@ export function MessageCard({
   highlight?: boolean;
 }) {
   return (
-    <Reveal delay={Math.min(index, 3) * 70} className="timeline-item">
+    <Reveal
+      delay={Math.min(index, 3) * 70}
+      className={highlight ? "timeline-item item-strong" : "timeline-item"}
+    >
       <span className="timeline-dot" aria-hidden="true" />
       <article className={highlight ? "message-card message-card-strong" : "message-card"}>
         <p className={highlight ? "message-text-strong" : "message-text"}>
